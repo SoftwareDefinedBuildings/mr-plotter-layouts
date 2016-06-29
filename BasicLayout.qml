@@ -2,6 +2,12 @@ import QtQuick 2.0
 import MrPlotter 0.1
 
 Item {
+    property alias plotter: mrp;
+    property alias plotarea: pa;
+    property alias datadensityplotarea: ddpa;
+    property alias yaxisarea: yaa;
+    property alias datadensityyaxisarea: ddyaa;
+
     PlotArea {
         id: ddpa
         anchors.left: pa.left
