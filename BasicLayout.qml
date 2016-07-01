@@ -2,6 +2,7 @@ import QtQuick 2.0
 import MrPlotter 0.1
 
 Item {
+    id: toplevel
     property alias plotter: mrp;
     property alias plotarea: pa;
     property alias datadensityplotarea: ddpa;
@@ -13,14 +14,14 @@ Item {
         anchors.left: pa.left
         width: pa.width
         height: 70
-        yaxisarea: ddyaa
+        yAxisArea: ddyaa
     }
 
     YAxisArea {
         id: ddyaa
         y: 0
         anchors.right: ddpa.left
-        width: yaa.width
+        width: fyaa.width
         height: parent.height
         rangeStart: ddpa.y + ddpa.height
         rangeEnd: ddpa.y
@@ -29,20 +30,27 @@ Item {
     PlotArea {
         id: pa
         y: ddpa.height + 15
-        anchors.left: yaa.right
-        width: parent.width - yaa.width
+        anchors.left: fyaa.right
+        width: parent.width - fyaa.width
         height: Math.max(parent.height - taa.height - ddpa.height, 60)
-        yaxisarea: yaa
+        yAxisArea: yaa
     }
 
-    YAxisArea {
-        id: yaa
-        y: 0
+    Flickable {
+        id: fyaa
         anchors.left: parent.left
-        width: Math.min(parent.width / 4, 300)
+        y: 0
+        width: Math.min(parent.width / 5, yaa.width)
         height: parent.height
-        rangeStart: pa.y + pa.height
-        rangeEnd: pa.y
+        contentWidth: yaa.width
+        clip: true
+
+        YAxisArea {
+            id: yaa
+            height: fyaa.height
+            rangeStart: pa.y + pa.height
+            rangeEnd: pa.y
+        }
     }
 
     TimeAxisArea {
