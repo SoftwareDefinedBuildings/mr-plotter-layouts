@@ -65,8 +65,7 @@ Item {
 
     MrPlotter {
         id: mrp
-        mainPlot: pa
-        dataDensityPlot: ddpa
+        plotList: [pa, ddpa]
         timeaxisarea: taa
     }
 }
