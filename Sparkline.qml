@@ -16,24 +16,12 @@ Item {
         archiver: toplevel.archiver
     }
 
-    YAxis {
+    SmoothYAxis {
         id: yaxis
         dynamicAutoscale: true
         name: "Reading"
         domain: [-1, 1]
         streamList: [stream]
-
-        Behavior on domainLo {
-            NumberAnimation {
-                duration: 200
-            }
-        }
-
-        Behavior on domainHi {
-            NumberAnimation {
-                duration: 200
-            }
-        }
     }
 
     PlotArea {
@@ -45,7 +33,7 @@ Item {
 
     MrPlotter {
         id: mrp
-        mainPlot: pa
+        plotList: [pa]
         timeDomain: [1415643674978, 1415643674979, 469055, 469060]
 
         Component.onCompleted: {
