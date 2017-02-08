@@ -16,11 +16,21 @@ Item {
     property alias dataDensityScrollZoomable: ddpa.scrollZoomable
     property var autozoom: function ()
     {
-        mrp.autozoom(pa.streamList);
+        return mrp.autozoom(pa.streamList);
+    }
+
+    property var hardcodeLocalData: function (uuid, data)
+    {
+        return mrp.hardcodeLocalData(uuid, data);
+    }
+
+    property var dropHardcodedLocalData: function (uuid)
+    {
+        return mrp.dropHardcodedLocalData(uuid);
     }
 
     Rectangle {
-        id: "topspacing"
+        id: topspacing
         color: "transparent"
         y: 0
         height: 10

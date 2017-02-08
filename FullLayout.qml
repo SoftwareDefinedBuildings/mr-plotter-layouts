@@ -14,7 +14,7 @@ Item {
         anchors.left: pa.left
         width: pa.width
         height: 70
-        yAxisArea: ddyaa
+        yAxisAreaList: [ddyaa]
     }
 
     YAxisArea {
@@ -33,7 +33,7 @@ Item {
         anchors.left: fyaa.right
         width: parent.width - fyaa.width
         height: Math.max(parent.height - taa.height - ddpa.height, 60)
-        yAxisArea: yaa
+        yAxisAreaList: [yaa]
     }
 
     Flickable {

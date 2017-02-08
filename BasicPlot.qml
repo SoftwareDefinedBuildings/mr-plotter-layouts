@@ -22,7 +22,7 @@ Item {
         anchors.left: fyaa.right
         anchors.right: parent.right
         anchors.bottom: taa.top
-        yAxisArea: yaa
+        yAxisAreaList: [yaa]
     }
 
     Flickable {
