@@ -69,7 +69,7 @@ Item {
         x: 0
         y: 70
         width: parent.width
-        height: 10
+        height: 20
     }
 
     PlotArea {
