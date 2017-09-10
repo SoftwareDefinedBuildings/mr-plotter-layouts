@@ -15,6 +15,7 @@ Item {
     property alias dataDensityStreamList: ddpa.streamList
     property alias dataDensityScrollZoomable: ddpa.scrollZoomable
     property alias plotter: mrp
+    property alias plotarea: pa
     property var autozoom: function ()
     {
         return mrp.autozoom(pa.streamList);
